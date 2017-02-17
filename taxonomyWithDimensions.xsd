@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tx="http://www.example.com/newTaxonomyWithDimensions"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:link="http://www.xbrl.org/2003/linkbase"
+        xmlns:xbrli="http://www.xbrl.org/2003/instance"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified"
+        targetNamespace="http://www.example.com/newTaxonomyWithDimensions">
+  <xs:annotation>
+    <xs:appinfo>
+      <link:linkbaseRef xlink:type="simple"
+                        xlink:href="definition.xml"
+                        xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef"
+                        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <import namespace="http://www.xbrl.org/2003/instance"
+          schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt"
+          schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <element abstract="false"
+           name="Sales"
+           nillable="true"
+           substitutionGroup="xbrli:item"
+           xbrli:periodType="duration"
+           type="xbrli:monetaryItemType"
+           id="id0"/>
+  <element abstract="true"
+           name="SalesByRegionHypercume"
+           nillable="true"
+           substitutionGroup="xbrldt:hypercubeItem"
+           xbrli:periodType="duration"
+           type="xbrli:stringItemType"
+           id="id1"/>
+  <element abstract="true"
+           name="ByRegionDimension"
+           nillable="true"
+           substitutionGroup="xbrldt:dimensionItem"
+           xbrli:periodType="duration"
+           type="xbrli:stringItemType"
+           id="id2"/>
+  <element abstract="true"
+           name="Center"
+           nillable="true"
+           substitutionGroup="xbrli:item"
+           xbrli:periodType="duration"
+           type="xbrli:stringItemType"
+           id="id3"/>
+  <element abstract="true"
+           name="South"
+           nillable="true"
+           substitutionGroup="xbrli:item"
+           xbrli:periodType="duration"
+           type="xbrli:stringItemType"
+           id="id4"/>
+  <element abstract="true"
+           name="North"
+           nillable="true"
+           substitutionGroup="xbrli:item"
+           xbrli:periodType="duration"
+           type="xbrli:stringItemType"
+           id="id5"/>
+</schema>

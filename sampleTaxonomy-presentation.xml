@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:tx="http://www.reportingstandard.com/sampleTaxonomy" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="sampleTaxonomy.xsd#tx_T" xlink:label="T" xlink:title="T"/>
+    <link:loc xlink:type="locator" xlink:href="sampleTaxonomy.xsd#tx_TA" xlink:label="TA" xlink:title="TA"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="T" xlink:to="TA" xlink:title="presentation: T to TA" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="sampleTaxonomy.xsd#tx_TB" xlink:label="TB" xlink:title="TB"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="T" xlink:to="TB" xlink:title="presentation: T to TB" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="sampleTaxonomy.xsd#tx_B" xlink:label="B" xlink:title="B"/>
+    <link:loc xlink:type="locator" xlink:href="sampleTaxonomy.xsd#tx_C" xlink:label="C" xlink:title="C"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="B" xlink:to="C" xlink:title="presentation: B to C" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="sampleTaxonomy.xsd#tx_D" xlink:label="D" xlink:title="D"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="B" xlink:to="D" xlink:title="presentation: B to D" order="2.0"/>
+  </link:presentationLink>
+</link:linkbase>

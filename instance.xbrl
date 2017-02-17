@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is just a sample instance document referencing a taxonomy locally -->
+<!-- XBRL Report (Instance) generated using Reporting Standard S.L. Software -->
+<!-- http://www.reportingstandard.com -->
+<!-- Software (C) 2008-2016 Reporting Standard S.L. All rights reserved -->
+<!-- Version: 2.8.7.908 -->
+<!-- License issued to: José Maria at Reporting Standard -->
+<!-- This document has been created with a valid production license -->
+<xbrl xmlns="http://www.xbrl.org/2003/instance"
+      xmlns:link="http://www.xbrl.org/2003/linkbase"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xbrli="http://www.xbrl.org/2003/instance"
+      xmlns:tx="http://www.reportingstandard.com/sampleTaxonomy">
+  <link:schemaRef xlink:href="sampleTaxonomy.xsd" xlink:type="simple"/>
+  <context id="id0">
+    <entity>
+      <identifier scheme="http://www.xbrl.org/scheme">Sample Company</identifier>
+    </entity>
+    <xbrli:period>
+      <instant>2008-01-01</instant>
+    </xbrli:period>
+  </context>
+  <tx:A contextRef="id0" id="id1">Sample Text</tx:A>
+  <link:footnoteLink xlink:role="http://www.xbrl.org/2003/role/link" xlink:type="extended">
+    <link:loc xlink:type="locator" xlink:href="#id1" xlink:label="lbl1"/>
+    <link:footnote xlink:label="lbl0" xlink:type="resource" id="id2" xml:lang="en">Footnote content</link:footnote>
+    <link:footnoteArc use="optional"
+                      xlink:to="lbl0"
+                      xlink:from="lbl1"
+                      xlink:type="arc"
+                      xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote"/>
+  </link:footnoteLink>
+</xbrl>
