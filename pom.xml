@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.xbrlrs</groupId>
+  <artifactId>XBRL-API-Samples</artifactId>
+  <version>0.0.1</version>
+  <name>XBRL-API-Samples</name>
+  <description>Examples about how to use RS - XBRL - API</description>
+  
+  <properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+  	<xbrljlib.lib.path>/Users/ihr/workspace/xbrljlib/lib</xbrljlib.lib.path>
+  </properties>
+  
+  <organization>
+    <name>Reporting Estándar S.L.</name>
+    <url>http://www.reportingstandard.com</url>
+  </organization>
+	
+  <dependencies>
+    <dependency>
+      <groupId>com.xbrlrs</groupId>
+      <artifactId>xbrljlib</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.16</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf</groupId>
+      <artifactId>saxon</artifactId>
+      <version>9ee</version>
+      <scope>system</scope>
+      <systemPath>${xbrljlib.lib.path}/saxon9ee.jar</systemPath>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
