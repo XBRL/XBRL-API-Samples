@@ -74,20 +74,20 @@ public class SampleCreateInstance {
 		
 		// create the Non Numeric (Text) fact item
 //		XBRLFactNonNumeric fA = new XBRLFactNonNumeric(instance,ctx,itemA);
-		XBRLFactNonNumeric fA = new XBRLFactNonNumeric(instance.getInstanceRootNode(), ctx, itemA);
+		XBRLFactNonNumeric fA = new XBRLFactNonNumeric(instance.getInstanceRootNode(), ctx, itemA, true);
 		// fA is nil until a value is assigned
 		fA.setValue(new StringValue("test"));
 		
 		// creare a Numeric fact item
 		XBRLItem itemB = (XBRLItem)dts.getConcept(new QName(ns,"B"));
 //		XBRLFactNumeric fB = new XBRLFactNumeric(instance,ctx,itemB,unit);
-		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemB, unit, 1000, XBRLNumber.INF, ExactitudeMode.DECIMALS, null);
+		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemB, unit, 1000, XBRLNumber.INF, ExactitudeMode.DECIMALS, null, true);
 		
 		XBRLItem itemC = (XBRLItem)dts.getConcept(new QName(ns,"C"));
-		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemC, unit,  700, XBRLNumber.INF, ExactitudeMode.DECIMALS, null);
+		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemC, unit,  700, XBRLNumber.INF, ExactitudeMode.DECIMALS, null, true);
 		
 		XBRLItem itemD = (XBRLItem)dts.getConcept(new QName(ns,"D"));
-		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemD, unit,  300, XBRLNumber.INF, ExactitudeMode.DECIMALS, null);
+		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemD, unit,  300, XBRLNumber.INF, ExactitudeMode.DECIMALS, null, true);
 
 		// Validate the report and obtain the results in the report object
 		XBRLValidationReport rep = instance.validate(XBRLCoreProcessor.create(dts));
