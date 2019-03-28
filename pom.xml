@@ -34,7 +34,7 @@
       <artifactId>saxon</artifactId>
       <version>9ee</version>
       <scope>system</scope>
-      <systemPath>${xbrljlib.lib.path}/saxon9ee.jar</systemPath>
+      <systemPath>${xbrljlib.lib.path}/saxon-ee-9.6.0.7.jar</systemPath>
     </dependency>
   </dependencies>
   
