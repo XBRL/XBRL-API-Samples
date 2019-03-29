@@ -15,7 +15,9 @@
 package com.rs.xbrl.samples.instances;
 
 import java.net.URI;
-import java.util.Vector;
+import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.xml.namespace.QName;
 
@@ -47,13 +49,13 @@ import net.sf.saxon.value.StringValue;
  */
 public class SampleCreateInstance {
 	
-	private final static String ns = "http://www.reportingstandard.com/sampleTaxonomy"; 
+	private static final String TAXONOMY_NAMESPACE = "http://www.reportingstandard.com/sampleTaxonomy"; 
 
-	public static void main(String args[]) throws Exception {
+	public static void main(String[] args) throws Exception {
 		
 		// Loads the sample taxonomy
 		DTSContainer dts = DTSContainer.newEmptyContainer();
-		URI uri = new URI("sampleTaxonomy.xsd");
+		URI uri = Paths.get("sampleTaxonomy.xsd").toUri();
 		dts.load(uri);
 		
 		// Create the instance document
@@ -65,12 +67,12 @@ public class SampleCreateInstance {
 		XBRLContext ctx = new XBRLContext(dts,ent,p,null);
 		
 		// create the unit for monetary item type values
-		Vector<QName> vU = new Vector<QName>(1);
+		List<QName> vU = new LinkedList<>();
 		vU.add(new QName(XBRL.XBRL_iso4217NS,"EUR"));
 		XBRLUnit unit = new XBRLUnit(dts,vU,null);
 		
 		// Obtain the concept definition for concept "A"
-		XBRLItem itemA = (XBRLItem)dts.getConcept(new QName(ns,"A"));
+		XBRLItem itemA = (XBRLItem)dts.getConcept(new QName(TAXONOMY_NAMESPACE,"A"));
 		
 		// create the Non Numeric (Text) fact item
 //		XBRLFactNonNumeric fA = new XBRLFactNonNumeric(instance,ctx,itemA);
@@ -79,14 +81,14 @@ public class SampleCreateInstance {
 		fA.setValue(new StringValue("test"));
 		
 		// creare a Numeric fact item
-		XBRLItem itemB = (XBRLItem)dts.getConcept(new QName(ns,"B"));
+		XBRLItem itemB = (XBRLItem)dts.getConcept(new QName(TAXONOMY_NAMESPACE,"B"));
 //		XBRLFactNumeric fB = new XBRLFactNumeric(instance,ctx,itemB,unit);
 		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemB, unit, 1000, XBRLNumber.INF, ExactitudeMode.DECIMALS, null, true);
 		
-		XBRLItem itemC = (XBRLItem)dts.getConcept(new QName(ns,"C"));
+		XBRLItem itemC = (XBRLItem)dts.getConcept(new QName(TAXONOMY_NAMESPACE,"C"));
 		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemC, unit,  700, XBRLNumber.INF, ExactitudeMode.DECIMALS, null, true);
 		
-		XBRLItem itemD = (XBRLItem)dts.getConcept(new QName(ns,"D"));
+		XBRLItem itemD = (XBRLItem)dts.getConcept(new QName(TAXONOMY_NAMESPACE,"D"));
 		XBRLFactNumeric.make(instance.getInstanceRootNode(), ctx, itemD, unit,  300, XBRLNumber.INF, ExactitudeMode.DECIMALS, null, true);
 
 		// Validate the report and obtain the results in the report object

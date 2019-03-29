@@ -15,6 +15,7 @@
 package com.rs.xbrl.samples.taxonomies;
 
 import java.net.URI;
+import java.nio.file.Paths;
 import java.util.Iterator;
 
 import com.ihr.xbrl.om.DTSContainer;
@@ -41,7 +42,7 @@ public class SampleReadTaxonomyShowConceptsAndRelationships {
 		/*
 		 * Open the taxonomy DTS from a local file. The DTS is discovered now.
 		 */
-		URI uri = new URI("sampleTaxonomy.xsd");
+		URI uri = Paths.get("sampleTaxonomy.xsd").toUri();
 		dts.load(uri);
 		
 		/*

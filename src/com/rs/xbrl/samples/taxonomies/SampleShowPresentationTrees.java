@@ -14,8 +14,10 @@
  */
 package com.rs.xbrl.samples.taxonomies;
 
-import java.io.File;
+import java.nio.file.Paths;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Properties;
 import java.util.Vector;
 
@@ -38,7 +40,7 @@ import com.rs.lic.LicenseVerificationException;
  */
 public class SampleShowPresentationTrees {
 	
-	static Vector<String> languages = new Vector<String>();
+	static List<String> languages = new LinkedList<>();
 	
 	static {
 		languages.add("en");
@@ -59,7 +61,7 @@ public class SampleShowPresentationTrees {
 		
 		Properties props = new Properties();		
 		DTSContainer dts = DTSContainer.newEmptyContainer(props);
-		dts.load(new File(args[0]).toURI());
+		dts.load(Paths.get(args[0]).toUri());
 		
 		DTSExplorer dte = new DTSExplorer(dts);		
 				
@@ -85,7 +87,7 @@ public class SampleShowPresentationTrees {
 	}
 
 	private static String spaces(int length) {
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		while (length > 0) {
 			sb.append(' ');
 			length--;

@@ -15,6 +15,7 @@
 package com.rs.xbrl.samples.instances;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.Properties;
 
@@ -49,7 +50,7 @@ public class SampleReadInstance {
 		}
 		Properties pros = new Properties();
 		DTSContainer dts = DTSContainer.newEmptyContainer(pros);
-		XBRLInstance instance = (XBRLInstance)dts.load(new File(args[0]).toURI());
+		XBRLInstance instance = (XBRLInstance)dts.load(Paths.get(args[0]).toUri());
 		// ... rest of the application code goes here
 		
 		Iterator<XBRLContext> iterC = instance.getInstanceRootNode().getContexts();

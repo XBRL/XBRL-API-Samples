@@ -15,6 +15,7 @@
 package com.rs.xbrl.samples.instances;
 
 import java.net.URI;
+import java.nio.file.Paths;
 
 import com.ihr.xbrl.om.DTSContainer;
 import com.ihr.xbrl.om.instance.XBRLFact;
@@ -34,7 +35,7 @@ public class SampleRemoveFact {
 		
 		// Loads the sample taxonomy
 		DTSContainer dts = DTSContainer.newEmptyContainer();
-		URI uri = new URI("instance.xbrl");
+		URI uri = Paths.get("instance.xbrl").toUri();
 		XBRLInstance instance = (XBRLInstance)dts.load(uri);
 
 		System.out.println("Before remove fact");
