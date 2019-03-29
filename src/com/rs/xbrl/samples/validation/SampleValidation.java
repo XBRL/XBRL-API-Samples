@@ -14,7 +14,7 @@
  */
 package com.rs.xbrl.samples.validation;
 
-import java.net.URI;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import com.ihr.xbrl.om.DTSContainer;
@@ -61,7 +61,7 @@ public class SampleValidation {
 		
 		// Load the taxonomy first.
 		DTSContainer dts = DTSContainer.newEmptyContainer(props);
-		dts.load(new URI("instance.xbrl")); // open the report to be validated
+		dts.load(Paths.get("instance.xbrl").toUri()); // open the report to be validated
 		
 		// this runs the entire validation chain and collect validation errors and inconsistencies
 		XBRLValidationReport report = dts.validate(); 
