@@ -19,7 +19,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
-import java.util.Vector;
 
 import com.ihr.xbrl.dts.DTSExplorer;
 import com.ihr.xbrl.dts.XBRLTreeNode;
@@ -68,7 +67,7 @@ public class SampleShowPresentationTrees {
 		Iterator<XBRLRoleType> iterR = dts.getBaseRoles(PresentationLinkbase.lbType);
 		while (iterR.hasNext()) {
 			XBRLRoleType defBaseRole = iterR.next();			
-			Vector<XBRLTreeRoot> vRoots = dte.getRoots(defBaseRole.getRoleAndArcroleURI(), PresentationLinkbase.lbType);
+			List<XBRLTreeRoot> vRoots = dte.getRoots(defBaseRole.getRoleAndArcroleURI(), PresentationLinkbase.lbType);
 			for (XBRLTreeRoot root : vRoots)
 				recurseShowTree(root,0);
 		}

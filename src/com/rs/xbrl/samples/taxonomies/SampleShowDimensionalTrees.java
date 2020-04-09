@@ -16,8 +16,8 @@ package com.rs.xbrl.samples.taxonomies;
 
 import java.nio.file.Paths;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
-import java.util.Vector;
 
 import com.ihr.xbrl.dts.DTSExplorer;
 import com.ihr.xbrl.dts.XBRLTreeRoot;
@@ -64,7 +64,7 @@ public class SampleShowDimensionalTrees {
 		Iterator<XBRLRoleType> iterR = dts.getBaseRoles(DefinitionLinkbase.lbType);
 		while (iterR.hasNext()) {
 			XBRLRoleType defBaseRole = iterR.next();			
-			Vector<XBRLTreeRoot> vRoots = dte.getRoots(defBaseRole.getRoleAndArcroleURI(), DefinitionLinkbase.lbType);
+			List<XBRLTreeRoot> vRoots = dte.getRoots(defBaseRole.getRoleAndArcroleURI(), DefinitionLinkbase.lbType);
 			for (XBRLTreeRoot root : vRoots) {
 				
 				XBRLArcroleType art = root.getWalker().getArcrole();				
