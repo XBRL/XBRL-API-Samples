@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.Properties;
 
-import org.apache.log4j.Level;
+import org.apache.logging.log4j.Level;
 
 import com.ihr.xbrl.om.DTSContainer;
 import com.ihr.xbrl.om.instance.XBRLFact;
