@@ -9,7 +9,7 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<xbrljlib.lib.path>/Users/ihr/git/xbrljlib/lib</xbrljlib.lib.path>
   </properties>
   
